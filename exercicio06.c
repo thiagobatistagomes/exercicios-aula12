@@ -29,22 +29,20 @@ int main ()
 
 long long int fatorial(int x)
 {
-    int i;
-    long long int resultado = 1;
-    for(i = x; i >= 1; i--)
+    if (x <= 1)
     {
-        resultado *= i;
+        return 1;
+    } else {
+        return x * fatorial(x - 1);
     }
-    return resultado;
 }
 
 double serie(int n)
 {
-    double S = 0.0;
-    int i;
-    for(i = 0; i < n; i++)
+    double soma = 0.0;
+    for (int i = 0; i < n; i++)
     {
-       S += (double)i / fatorial(i + 1);
+        soma += (double)i / fatorial(2 * i);
     }
-    return S;
+    return soma;
 }

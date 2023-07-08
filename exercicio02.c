@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <math.h>
 
 /*
     Faça uma função booleana (devolve 0 = não, ou 1 = sim) que recebe um valor inteiro N e retorne se esse

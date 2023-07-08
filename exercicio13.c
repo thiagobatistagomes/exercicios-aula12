@@ -51,12 +51,38 @@ int main ()
 
 int pontoDentroRetangulo(Ponto ponto, Ponto v1, Ponto v2)
 {
-    if (ponto.x >= v1.x && ponto.x <= v2.x && ponto.y >= v1.y && ponto.y <= v2.y)
+    int resp;
+    int minX, maxX, minY, maxY;
+
+    if (v1.x < v2.x)
     {
-        return 1;
+        minX = v1.x;
+        maxX = v2.x;
     }
     else
     {
-        return 0;
+        minX = v2.x;
+        maxX = v1.x;
     }
+
+    if (v1.y < v2.y)
+    {
+        minY = v1.y;
+        maxY = v2.y;
+    }else
+    {
+        minY = v2.y;
+        maxY = v1.y;
+    }
+
+    if(ponto.x > minX && ponto.x < maxX && ponto.y > minY && ponto.y < maxY)
+    {
+        resp = 1;
+    }
+    else
+    {
+        resp = 0;
+    }
+
+    return resp;
 }
